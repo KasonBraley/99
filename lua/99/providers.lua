@@ -32,7 +32,7 @@ local BaseProvider = {}
 --- @param request _99.Request
 function BaseProvider:_retrieve_response(request)
   local logger = request.logger:set_area(self:_get_provider_name())
-  local tmp = request.context.tmp_file
+  local tmp = request.context.tmp_file .. "-prompt"
   local success, result = pcall(function()
     return vim.fn.readfile(tmp)
   end)

@@ -164,7 +164,7 @@ function RequestContext:finalize()
   end
   table.insert(
     self.ai_context,
-    self._99.prompts.tmp_file_location(self.tmp_file)
+    self._99.prompts.tmp_file_location(self.tmp_file .. "-prompt")
   )
   return self
 end
